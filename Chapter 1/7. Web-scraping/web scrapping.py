@@ -54,7 +54,7 @@ data = {"week-day": week_day,
         "description": descriptions
 }
 
-dti = pd.date_range('today',periods=5,freq='D')
+dti = pd.date_range('2021-09-28',periods=5,freq='D')
 
 my_scraps = pd.DataFrame(data, index=dti)
 print(my_scraps)
