@@ -11,7 +11,6 @@ def scraper(url_path):
 
     extracts those values, stores into separate lists, then creates the dictionary from them.
     Returns the result as a dictionary.
-
     """
     titles = []
     avg_ratings = []
@@ -27,6 +26,10 @@ def scraper(url_path):
     pub_years_1 = []
     book_urls = []
     ################ starting point ############################
+    print('\n'*2)
+    print('*--*'*12)
+    print('Individual book scraping has been started')
+    print('*--*'*12)
     driver = webdriver.Chrome()
     counter = 0 # counter used to count number of books scraped
     pl_check = 0
@@ -211,7 +214,7 @@ def scraper(url_path):
     "places":places,
     "url": book_urls
     }
-    print('/n'*2)
+    print('\n'*2)
     print('*--*'*12)
     print('books have been successfully scraped')
     print('*--*'*12)

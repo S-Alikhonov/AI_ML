@@ -1,12 +1,12 @@
 from data_framer import *
 
 
-url_book_list = 'https://www.goodreads.com/list/show/7094.Best_of_the_Web'
-how_many = 50
+url_book_list = 'https://www.goodreads.com/list/show/11.Best_Crime_Mystery_Books'
+how_many = 500 
 
-dataframer(url_book_list,how_many)
-
-print('*--*'*12)
-print('all data saved as {}'.format([2]))
-print('*--*'*12)
+file_name = dataframer(url_book_list,how_many)
+print('\n')
+print('####'*12)
+print('all data saved as {}.csv'.format(file_name))
+print('####'*12)
 

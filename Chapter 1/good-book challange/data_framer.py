@@ -12,11 +12,15 @@ def dataframer(main_url,how_many):
     Stores this dataset as csv file into the hard drive of local machine.
     
     """
-    if not link_scraper(main_url,how_many):
+    data_link = link_scraper(main_url,how_many)
+    if not data_link:
         return None
-    links,img_links, file_name = link_scraper(main_url,how_many)
+    else:
+        links,img_links, file_name = data_link
     data = scraper(links)
     df = pd.DataFrame(data,dtype=object)
     
     df.to_csv('{}.csv'.format(file_name))
+
+    return file_name
 

@@ -1,7 +1,7 @@
 from selenium import webdriver
 from time import sleep
-driver = webdriver.Chrome()
 def link_scraper(main_url,how_many):
+    driver = webdriver.Chrome()
 
     """
 
@@ -16,6 +16,10 @@ def link_scraper(main_url,how_many):
         pages = how_many//100 + 1
     elif how_many//100 and how_many !=0:
         pages = how_many // 100
+    print('****'*12)
+    print('scraping individual links has been started.')
+    print('****'*12)
+    print('\n')
 
     urls = [[],[],[]]
     for i in range(pages):
@@ -24,13 +28,10 @@ def link_scraper(main_url,how_many):
         if i==0:
             cat_name = driver.find_element_by_xpath('//h1[@class="gr-h1 gr-h1--serif"]').text
             urls[2].append(cat_name)
-            print('*--*'*12)
-            print('scraping individual links has been started.')
-            print('----'*12)
             print('category:{}'.format(cat_name))
-            print('*--*'*12)
+            print('----'*12)
             max_page = driver.find_element_by_xpath('//div[@class="pagination"]').find_elements_by_tag_name('a')[-2].text
-            print('there are more than {} books in this list'.format((int(max_page)-1)*100))
+            print('There are more than {} books in this list'.format((int(max_page)-1)*100))
         if pages>int(max_page):
             print('\n')
             print('as you can see, there are less than {} books'.format(how_many))
@@ -48,7 +49,7 @@ def link_scraper(main_url,how_many):
             urls[0].append(b_title.get_attribute('href'))
             urls[1].append(pctr.get_attribute('src'))
         sleep(1)
-    print('\n'*2)
+    print('\n')
     print('*'*50)
     print('indvidual urls of {} books have scraped seccessfully!'.format(how_many))
     print('*'*50)
