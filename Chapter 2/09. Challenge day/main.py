@@ -4,15 +4,15 @@ import numpy as np
 from streamlit.proto.Markdown_pb2 import Markdown
 from without_aug import *
 from sklearn.ensemble import AdaBoostClassifier
+from PIL import Image
 
-
+logo ='/Users/saidalikhonalikhonov/Documents/GitHub/AI_chapter_1/Chapter 2/09. Challenge day/Heart-Rate-Variability-and-Sleep_EB-01-scaled.jpg'
 sb = st.sidebar
+sb.image(logo)
 menu = sb.selectbox("Navigation",('Home','Diagnostics'))
 if menu=="Home":
     st.header('Team Robert Koch')
-    st.markdown('''<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-    ''',unsafe_allow_html=True)
+    st.markdown('''<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">''',unsafe_allow_html=True)
     st.markdown('''
     <div class="list-group">
   <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
@@ -24,6 +24,12 @@ if menu=="Home":
  
 </div>''',unsafe_allow_html=True)
 elif menu=='Diagnostics':
+
+    ######################################################################################################
+    #################################     H E A R T   D I S E A S E   ####################################
+    ######################################################################################################
+
+    
     sb.subheader('insert patient data')
     age = sb.number_input('Age of the person:',min_value=1,max_value=100,value=40)
     sex_text = sb.selectbox('Gender of the person:',('male','female'))
@@ -43,7 +49,8 @@ elif menu=='Diagnostics':
     caa = sb.selectbox('number of major vessels (0-3)',(0,1,2,3))
     thall = sb.selectbox('Thal rate',(0,1,2,3))
 
-    option = st.checkbox('show the result')
+    option=st.checkbox('show the result')
+    
     if option:
 
         patient = {
@@ -71,17 +78,9 @@ elif menu=='Diagnostics':
         model.fit(X_train_scaled,y_train)
         prediction = model.predict(x_patient_transformed)
         if prediction==1:
-            st.markdown("""
-            <div class="alert alert-danger" role="alert">
-            Pill is required immediately!
-            </div>
-            """,unsafe_allow_html=True)
+           st.error('There is a high probability that you \'ll get heart attact !!!')
         else:
-            st.markdown("""</div>
-            <div class="alert alert-success" role="alert">
-            you are fine, no need to take pill
-            </div>""",unsafe_allow_html=True)
-
+            st.success('No worries, you are fine.')
 
 
 
