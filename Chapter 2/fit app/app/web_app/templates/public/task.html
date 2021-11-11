@@ -1,0 +1,27 @@
+{% extends "public/templates/public_template.html"%}
+
+{%block title%}{{title}}{%endblock title%}
+
+{% block main %} 
+{%include "public/messages.html"%}
+<div class="content-section">
+    <form method="POST" action="" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Sync your device</legend>
+            <div class="form-group">
+                {{ form.csv.label(class="form-control-label") }}
+                {{ form.csv(class="form-control form-control-file") }}
+                {% if form.csv.errors %}
+                        {% for error in form.csv.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                        {% endfor %}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+
+{% endblock main %}

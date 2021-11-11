@@ -12,19 +12,22 @@ def scraper(url_path):
     extracts those values, stores into separate lists, then creates the dictionary from them.
     Returns the result as a dictionary.
     """
-    titles = []
-    avg_ratings = []
-    authors = []
-    num_ratings = []
-    num_revs = []
-    num_pages = []
-    publ_years = []
-    is_series = []
-    genres = []
-    awards = []
-    places = []
-    pub_years_1 = []
-    book_urls = []
+    column_names = ["titles","author","number_of_reviews","number_of_ratings","average_rating","number_of_pages","published_year",\
+        "first_published","series","genres","awards","places","url","cover_url"]
+    ress = pd.DataFrame(columns=column_names)
+    # titles = []
+    # avg_ratings = []
+    # authors = []
+    # num_ratings = []
+    # num_revs = []
+    # num_pages = []
+    # publ_years = []
+    # is_series = []
+    # genres = []
+    # awards = []
+    # places = []
+    # pub_years_1 = []
+    # book_urls = []
     ################ starting point ############################
     print('\n'*2)
     print('*--*'*12)
@@ -35,41 +38,44 @@ def scraper(url_path):
     pl_check = 0
     place = []
     for url in url_path:
+        data={}
         counter +=1 # counter increment
         if counter %25==0: #when each 25 pile scraped, it prints and sleeps for 2 secs
-            print('{} books are scraped'.format(counter))
+            print('{} books have been scraped'.format(counter))
             print('----'*12)
             if counter%100==0:
                 sleep(3) #it sleep extra 3 secs, when a 100 books' pile are done
             sleep(2)
         driver.get(url)#loads the each individual page
         try:
+            cover= driver.find_element_by_id('coverImage').get_attribute('src')
+            data['cover_url']=cover
             box = driver.find_element_by_id('metacol')
             ######## extracting info about title ##############
             title = box.find_element_by_id('bookTitle').text #targets unique item with id 
-            titles.append(title)
+            data['titles']=title
             ######## extracting info about average rating ##############
             author_box = box.find_element_by_id('bookAuthors') #targets box containing author info
             author = author_box.find_elements_by_tag_name('a')[0].text
-            authors.append(author)
+            data['author']=author
             ######## extracting info about average rating ##############
             rat_rev_box = box.find_element_by_id('bookMeta') # targets the box containing info about ratings, reviews
             avg_rating = rat_rev_box.find_elements_by_tag_name('span')[6].text#Targets the 7th span as it holds avg_rating info
-            avg_ratings.append(float(avg_rating))
+            data['average_rating']=float(avg_rating)
             ######## extracting info about number of ratings ##############
             num_rating = rat_rev_box.find_elements_by_tag_name('a')[1].text.split()[0].replace(',','')
-            num_ratings.append(int(num_rating))
+            data['number_of_ratings']=int(num_rating)
             ######## extracting info about number of reviews ##############
             num_rev = rat_rev_box.find_elements_by_tag_name('a')[2].text.split()[0].replace(',','')
-            num_revs.append(int(num_rev))
+            data['number_of_reviews']=int(num_rev)
             ########## finds element containing pages, pub year
             details = box.find_element_by_id('details') #targets details box containing info about a book
             ######## is it aprt of book series ################
             series = box.find_element_by_id('bookSeries')
             if len(series.text)>0: #checks whether bookSeries text exists or not
-                is_series.append(1)
+                data['series']=True
             else:
-                is_series.append(0)
+                data['series']=False
             ######## extracting info about pages ##############
             page_check = 0
             try:
@@ -77,13 +83,13 @@ def scraper(url_path):
                 pages = details.find_elements_by_tag_name('div')[0].find_element_by_xpath('.//span[@itemprop="numberOfPages"]').text.split()
                 for i in pages:
                     if i.isnumeric(): #check if it is numeric
-                        num_pages.append(int(i))
+                        data['number_of_pages']=int(i)
                         page_check=1 #make check mask 1
                         break
             except:
                 pass
             if not page_check: #if mask never change, the value will be None
-                num_pages.append(None)
+                data['number_of_pages']=None
             ####### extracting info about pub year ##############
             year_check = 0
             try:
@@ -91,24 +97,24 @@ def scraper(url_path):
                 pub_years = years_info.text.split()
                 for year in pub_years:
                     if len(year)==4 and year.isnumeric():#if it has length of 4 and integer, it will be a year
-                        publ_years.append(int(year))
+                        data['published_year']=int(year)
                         year_check = 1
             except:
                 pass
             if not year_check:
-                publ_years.append(None)
+                data['published_year']=None
             ####### extracting info about pub year first ##############
             year_check_1 = 0
             try:
                 pub_years_first = years_info.find_elements_by_class_name('greyText')[0].text.replace('(','').replace(')','').split()
                 for yr in pub_years_first:
                     if len(yr)==4 and yr.isnumeric():
-                        pub_years_1.append(int(yr))
+                        data['first_published']=int(yr)
                         year_check_1 = 1
             except:
                 pass
             if not year_check_1:
-                pub_years_1.append(None)
+                data['first_published']=None
             ######## extracting info about genre ##############
             genre_check = 0
             try:
@@ -119,13 +125,13 @@ def scraper(url_path):
                 
                 for genre in genres_box: #extracts text and merges them
                     genre_complete.append(genre.find_elements_by_tag_name('div')[0].text)
-                genres.append(genre_complete)
+                data['genres']=genre_complete
                 genre_check=1
                 
             except:
                 pass
             if not genre_check :
-                genres.append(None)
+                data['genres']=None
             ######## extracting info about awards ##############
             more_info_button = details.find_element_by_id('bookDataBoxShow')
             try:
@@ -152,9 +158,9 @@ def scraper(url_path):
             except:
                 pass
             if not check:
-                awards.append(None)
+                data['awards']=None
             else:
-                awards.append(complete_award)
+                data['awards']=complete_award
                 check=0
 
             ### !!! then uncomment code below
@@ -189,34 +195,35 @@ def scraper(url_path):
                         pl_check =1
 
             if not pl_check:
-                places.append(None)
+                data['places']=None
             else:
-                places.append(place)
-                place=[]
+                data['places']=place
+                # place=[]
             pl_check = 0
-            book_urls.append(url)
+            data['url']=url
         except:
             pass
-
-    #creates dictionary out of lists, then returns it
-    data = {
-    "title":titles,
-    "author":authors,
-    "num_reviews":num_revs,
-    "num_ratings":num_ratings,
-    "avg_rating":avg_ratings,
-    "num_pages":num_pages,
-    "publish_year":publ_years,
-    "first_published":pub_years_1,
-    "series":is_series,
-    "genres":genres,
-    "awards":awards,
-    "places":places,
-    "url": book_urls
-    }
+        # data = {
+        
+        # "number_of_reviews":num_revs,
+        # "number_of_ratings":num_ratings,
+        # "average_rating":avg_ratings,
+        # "number_of_pages":num_pages,
+        # "published_year":publ_years,
+        # "first_published":pub_years_1,
+        # "series":is_series,
+        # "genres":genres,
+        # "awards":awards,
+        # "places":places,
+        # "url": book_urls
+        # }
+        print(data)
+        ress = ress.append(data,ignore_index=True)
+        print(ress)
+        
     print('\n'*2)
     print('*--*'*12)
     print('books have been successfully scraped')
     print('*--*'*12)
 
-    return data
+    return ress

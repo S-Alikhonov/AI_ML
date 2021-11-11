@@ -18,7 +18,7 @@ def dataframer(main_url,how_many):
     else:
         links,img_links, file_name = data_link
     data = scraper(links)
-    df = pd.DataFrame(data,dtype=object)
+    df = data
     
     df.to_csv('{}.csv'.format(file_name))
 

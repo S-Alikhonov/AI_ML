@@ -1,8 +1,8 @@
 from data_framer import *
 
 
-url_book_list = 'https://www.goodreads.com/list/show/348.Thrillers'
-how_many = 500 
+url_book_list = 'https://www.goodreads.com/list/show/1170.Best_Business_Books?'
+how_many = 850
 
 file_name = dataframer(url_book_list,how_many)
 print('\n')
