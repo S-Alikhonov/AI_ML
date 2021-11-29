@@ -1,0 +1,2 @@
+timestamp,bus,car,still,train,walking,diet recommendation,calories,action recommendation
+0,2021-11-26 17,10.0,9.0,6.0,4.0,29.0,"['calorie deficit', 101.0]",3502,['Wow! You are too active. Give some rest to your legs. \n        It seems you are speending your time more active. It can cause some calorie deficits. Resting \n        or calorie-surplus on your diet would help.']
