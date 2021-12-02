@@ -59,7 +59,7 @@ def get_pairs(sentences,w2i,rng):
 
 #main ->combining all helpers
 
-def embed(pth,pair_interval):
+def embeds(pth,pair_interval):
 
     #data cleaning
     cleaned_file_path = cleaning(pth)
@@ -73,9 +73,5 @@ def embed(pth,pair_interval):
     #getting pairs
     pairs = get_pairs(sentences,w2i,pair_interval)
 
-    return pairs,voca_size
+    return pairs,voca_size,(w2i,i2w)
     
-
-pth = 'blakepoems.txt'
-pairs,voca_size = embed(pth,pair_interval=4)
-print(len(pairs),voca_size)
