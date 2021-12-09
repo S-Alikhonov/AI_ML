@@ -1,7 +1,7 @@
 import data_handler as dh
 from lstms import Model
 from torch.optim import Adam, SGD
-from torchsummary import summary
+from torchinfo import summary
 from torch.autograd  import Variable
 from torch import nn
 import torch
@@ -22,7 +22,7 @@ batch_size = 50
 
 LSTM = Model(n_inputs, n_neurons, hidden_dim)
 
-LSTM.cuda()
+# LSTM.cuda()
 
 optim = Adam(LSTM.parameters(), lr= learning_rate)
 
@@ -41,8 +41,7 @@ def train(n_iterations, data):
         x_batch, y_batch = Variable(x_batch).float(), Variable(y_batch).float()
 
         
-        x_batch.cuda()
-        y_batch.cuda() 
+
         #print(x_batch.shape)
         #print(y_batch.size)
         
@@ -54,7 +53,7 @@ def train(n_iterations, data):
         #print(outputs.shape)
         #print(y_batch.shape)
         
-        loss = criterion(y_batch.flatten().cuda(), outputs.cuda() )
+        loss = criterion(y_batch.flatten(), outputs )
         loss.backward()
         #print(loss)
         optim.step()
@@ -68,20 +67,20 @@ def train(n_iterations, data):
 
             with torch.no_grad():
                 outputs = LSTM(x_batch)
-                test_loss = criterion(y_batch.flatten().cuda(), outputs.cuda() )
+                test_loss = criterion(y_batch.flatten(), outputs )
 
             if best_val > test_loss:
                 best_val = test_loss
                 torch.save(LSTM, "Best_val_model.pth")
             print(iter, "\t Train Loss:", loss.item(), "\t Test Loss:", test_loss.item() )
 
-    #plt.plot(train_loss, label= "Train Loss")
-    #plt.xlabel(" Iteration ")
-    #plt.ylabel("Loss value")
-    #plt.legend(loc="upper left")
-    #plt.show()
-    #plt.clf()
-#train(501, x_train)
+    plt.plot(train_loss, label= "Train Loss")
+    plt.xlabel(" Iteration ")
+    plt.ylabel("Loss value")
+    plt.legend(loc="upper left")
+    plt.show()
+    plt.clf()
+train(501, x_train)
 LSTM = torch.load("Best_val_model.pth")
 
 
@@ -90,15 +89,11 @@ x_batch, y_batch = torch.from_numpy(x_batch), torch.from_numpy(y_batch).squeeze(
 x_batch, y_batch = Variable(x_batch).float(), Variable(y_batch).float()
 
 
-if torch.cuda.is_available():
-        x_batch.cuda()
-        y_batch.cuda() 
-
 
 with torch.no_grad():
     LSTM.eval()
     outputs = LSTM(x_batch)
-    loss = criterion(y_batch.flatten().cuda(), outputs.cuda() )
+    loss = criterion(y_batch.flatten(), outputs )
     print(loss)
 
 y = y_batch.cpu().numpy().reshape((batch_size,hidden_dim))[0,:]
@@ -118,15 +113,12 @@ x_batch, y_batch = torch.from_numpy(x_batch), torch.from_numpy(y_batch).squeeze(
 x_batch, y_batch = Variable(x_batch).float(), Variable(y_batch).float()
 
 
-if torch.cuda.is_available():
-        x_batch.cuda()
-        y_batch.cuda() 
 
 
 with torch.no_grad():
     LSTM.eval()
     outputs = LSTM(x_batch)
-    loss = criterion(y_batch.flatten().cuda(), outputs.cuda() )
+    loss = criterion(y_batch.flatten(), outputs)
     print(loss)
 
 y = y_batch.cpu().numpy().reshape((batch_size,hidden_dim))[0,:]

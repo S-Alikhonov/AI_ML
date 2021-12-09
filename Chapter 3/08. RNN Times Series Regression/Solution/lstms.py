@@ -4,7 +4,7 @@ from torch import nn
 from torch.nn.modules import dropout
 from torch.nn.modules.linear import Linear
 from torch.optim import Adam, SGD
-from torchsummary import summary
+from torchinfo import summary
 from torch.autograd  import Variable
 
 
@@ -31,7 +31,7 @@ class Model(nn.Module):
         h0 = Variable(torch.zeros(self.neurons, x.shape[0], self.hidden_size))
         c0 = Variable(torch.zeros(self.neurons, x.shape[0],  self.hidden_size))
 
-        out, (hn,cn) = self.rnn(x.cuda(), ( h0.cuda(),c0.cuda() ) ) 
+        out, (hn,cn) = self.rnn(x, ( h0,c0 ) ) 
         hn = hn[-1]
         
         out = self.relu(hn.flatten())
