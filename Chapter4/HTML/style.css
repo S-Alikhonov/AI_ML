@@ -1,0 +1,19 @@
+body {
+    background-color: burlywood;
+}
+img {
+    width: 300px;
+    border-radius: 50%;
+}
+
+.hobbies {
+    border: 1px solid rgb(36, 233, 190);
+    background-color: purple ;
+    width: 30em;
+}
+
+.interest {
+    border: 1px solid rgb(36, 233, 190);
+    background-color: purple ;
+    width: 30em;
+}
