@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+}
+.main-section {
+    padding: 20px;
+}
+
+.image-container {
+    background-image: url("https://mymodernmet.com/wp/wp-content/uploads/2020/02/Landscape-Photographer-of-the-Year-Sander-Grefte.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+.place1 {
+    background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2014/11/Seceda-Green-1200px80__880.jpg");
+}
+.place2 {
+    background-image: url("https://iso.500px.com/wp-content/uploads/2019/03/500px_blog_malthe_interview_landscape_tips.jpg");
+}
+.place3 {
+    background-image: url("https://i.insider.com/5e4596bc96eee6186731c4c6?width=1300&format=jpeg&auto=webp");
+}
+.place4 {
+    background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2019/08/0072-5d43bddd6400b__880.jpg");
+}
+
+.place5 {
+    background-image: url("https://3.img-dpreview.com/files/p/E~TS1180x852~articles/1515307818/AI_0000176_47_A_1200.jpeg");
+    background-position: top;
+}
+
+
+
+
+
+
+
+div h1 {
+    font-family: 'Prata', serif;
+    font-size: 64px;
+    margin: 0;
+}
+div h3 {
+    font-family: 'Prata', serif;
+    font-size: 24px;
+    margin: 0;
+}
+.text {
+    display: flex;
+    align-items: baseline;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 600;
+}
+
+div+p {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.places {
+    padding: 22px;
+    margin-top: 56px;
+    margin-bottom: 0px;
+    background-image: linear-gradient(to right, #be7987 , #385884);
+    border-radius: 6px;
+    color: white;
+}
+
+.dolomites {
+    background-image : linear-gradient(to right, #161a25 , #3a402c);
+}
+.indonesia {
+    background-image :linear-gradient(to right, #4fa095 , #909ba3)
+}
+
+.china {
+    background-image :linear-gradient(to right, #517486 , #ededed)
+}
+.russia {
+    background-image: linear-gradient(to right, #05161e , #bad3f5);
+}
+ul li {
+    padding-left: 22px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-bottom: solid 1px #dfdfdf;
+    list-style: none;
+}
+li a {
+    text-decoration: none;
+    color: #be7987;
+}
+
+footer a{
+    padding: 16px;
+    display: block;
+    background-color: black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
