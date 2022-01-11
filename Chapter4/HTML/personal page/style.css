@@ -1,0 +1,124 @@
+body {
+    background-color: #002935;
+    margin: 0;
+}
+.body-about {
+    background-image: url('IMG_3718.png');
+    background-size: cover;
+    background-position-y:-200px ;
+    background-blend-mode: 0.75;
+    background-position-x:30px;
+}
+.navbar {
+    position: sticky;
+    display: flex;
+    background-color: rgb(22, 22, 22);
+    color:#f0efef;
+    justify-content: space-around;
+    height: 50px;
+    align-items: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+}
+div a {
+    text-decoration: none;
+
+}
+a:visited {
+    color:#f8f8f8;
+}
+
+.home {
+    height: 100vh;
+}
+
+.about {
+    height: 100vh;
+}
+footer {
+    color: #f8f8f8;
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-self: flex-end;
+    height: 10vh;
+    align-items: center;
+}
+img {
+    width: 250px;
+    border-radius: 50%;
+}
+.intro {
+
+    display: flex;
+    justify-content: center;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 20px;
+    color:rgb(22, 22, 22);
+    font-size: 50px;
+    padding-bottom: 0;
+}
+div h1 {
+    display: inline-block;
+    border-bottom: solid 10px #f8f8f8;
+}
+.information {
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+.interests-hobbies {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 20px;
+    width: 500px;
+    background: linear-gradient(to right, #0000004a, #ff000000,#ff000000);
+    font-family: 'Oxanium', cursive;
+}
+.hobbies {
+    width: 30em;
+    text-align: right;
+}
+
+.hobbies:hover {
+    width: 30em;
+    text-align: right;
+    color: white;
+}
+li {
+    list-style: none;
+
+}
+
+.interest {
+    width: 30em;
+    text-align: right;
+}
+.interest:hover {
+    width: 30em;
+    text-align: right;
+    color: white;
+}
+.education {
+    width: 30em;
+    text-align: right;
+}
+.education:hover {
+    width: 30em;
+    text-align: right;
+    color: white;
+}
+.technologies {
+    margin: 20px 20px;
+    width: 30em;
+    text-align: left;
+    background: linear-gradient(to left, #0000004a, #ff000000,#ff000000);
+    font-family: 'Oxanium', cursive;
+    line-height: 1.4;
+}
+.technologies:hover {
+    color: white;
+}
