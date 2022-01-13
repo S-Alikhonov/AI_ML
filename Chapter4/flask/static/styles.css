@@ -1,3 +1,46 @@
+:root {
+    --auxilary-color: #e63946ff;
+    --text-color: #f1faeeff;
+    --secondary-text-color: #a8dadcff;
+    --secondary-color: #457b9dff;
+    --primary-color: #1d3557ff;
+    --primary-font: 'Dosis', sans-serif;
+    --secondary-font: 'Exo', sans-serif;
+    --helper-font: 'Kulim Park', sans-serif;
+    --auxilary-font: 'Oxanium', cursive;
+}
+
+.navbar {
+    background: var(--primary-color) !important;
+}
+.navbar a {
+    color: var(--text-color) !important;
+    font-family: var(--primary-font) !important;
+}
 body {
-    background-color: aqua;
+    background-color: whitesmoke;
+}
+
+footer {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+#content {
+    min-height: 100vh;
+}
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+    font-family: var(--primary-font);
+    font-weight: 300;
+}
+.card {
+    color: var(--primary-color) !important;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.card-body {
+    background: var(--secondary-text-color);
 }

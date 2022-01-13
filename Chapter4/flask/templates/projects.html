@@ -1,4 +1,20 @@
-{% extends 'base.html %}
+{% extends 'base.html' %}
 {% block content %}
-<h1>Projects</h1>
+{% from 'components/cards.html' import card %}
+
+<div class="container">
+    <div class="projects">
+
+        <h1>My Project</h1>
+        <div class="row">
+            {%for project in projects%}
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                    <!-- {{ card(projects['cover_img'],project['title'],project['text'],project['link']) }} -->
+                {{card(project[0],project[1],project[2],project[3])}}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+    
 {% endblock %}
