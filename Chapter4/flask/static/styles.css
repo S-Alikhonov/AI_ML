@@ -161,7 +161,24 @@ projects:hover {
     margin-top: 15vw;
 
 }
-/*      */
+.card {
+    max-width: 250px;
+    background: rgba(245, 245, 245, 0);
+    border: 1px solid whitesmoke !important;
+    color:whitesmoke !important
+    
+}
+.card-body {
+    background: rgba(245, 245, 245, 0);
+}
+.card:hover {
+    background: #ffc600;;
+    border: 1px solid whitesmoke !important;
+    color:var(--dim-black) !important;
+    
+}
+/*  
+    */
 /* home_draft stles */
 /*       */
 
