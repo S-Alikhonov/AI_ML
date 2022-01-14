@@ -1,0 +1,46 @@
+.projects {
+    padding: 30px;
+    margin-top: 30px;
+}
+.project-avatar {
+    width: 30vw;
+    min-width: 100px;
+}
+.card {
+    max-width: 250px;
+    background: rgba(245, 245, 245, 0);
+    border: 1px solid whitesmoke !important;
+    color:whitesmoke !important
+    
+}
+.card-body {
+    background: rgba(245, 245, 245, 0);
+}
+.card:hover {
+    background: #ffc600;;
+    border: 1px solid whitesmoke !important;
+    color:var(--dim-black) !important;
+  
+}
+.page-title h1{
+    font-family: var(--main-font);
+    font-size: 8vw !important;
+    color: var(--platinum);
+}
+
+.project-card .card-text{
+    max-height: 100px;
+    overflow: scroll;
+}
+.project-card .card-title{
+    min-height: 48px; 
+    overflow: hidden;
+}
+.project-card .btn {
+    background:#ffc600 ;
+    font-size: 14px;
+}
+.project-card .btn:hover {
+    background:var(--dim-black);
+    color: var(--platinum);
+}

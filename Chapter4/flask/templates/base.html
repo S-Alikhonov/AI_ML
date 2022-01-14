@@ -16,11 +16,19 @@
 
     <!-- about page -->
     <link rel="stylesheet" href="{{url_for('static',filename='aboutPageStyle.css')}}">
-    <title>Document</title>
+
+    <!-- projects page -->
+    <link rel="stylesheet" href="{{url_for('static',filename='projectsPageStyle.css')}}">
+
+    <!-- contact page -->
+    <link rel="stylesheet" href="{{url_for('static',filename='contactPageStyle.css')}}">
+
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Dosis:wght@300;500;700&family=Exo:wght@100;400&family=Kulim+Park:wght@700&family=Montserrat:wght@900&family=Oxanium:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet"></head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Dosis:wght@300;500;700&family=Exo:wght@100;400&family=Kulim+Park:wght@700&family=Montserrat:wght@900&family=Oxanium:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet"></head>
+    <script src="https://kit.fontawesome.com/a09f580402.js" crossorigin="anonymous"></script>
+    <title>Document</title>
 <body>
     {% from 'components/navbar.html' import navbar %}
     {%from 'components/footer.html' import footer %}
@@ -31,7 +39,7 @@
     </div>
     {{ footer() }}
     <!-- bootsrap script -->
-
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

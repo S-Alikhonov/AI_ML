@@ -65,36 +65,6 @@ footer {
     margin-top: 15vw;
 
 }
-.projects {
-    padding: 30px;
-    margin-top: 30px;
-}
-.card {
-    max-width: 250px;
-    background: rgba(245, 245, 245, 0);
-    border: 1px solid whitesmoke !important;
-    color:whitesmoke !important
-    
-}
-.card-body {
-    background: rgba(245, 245, 245, 0);
-}
-.card:hover {
-    background: #ffc600;;
-    border: 1px solid whitesmoke !important;
-    color:var(--dim-black) !important;
-  
-}
 
 
-.reach-me {
-    width: 50vw;
-}
-label {
-    color: #ffc600;
-}
-.page-title h1{
-    font-family: var(--main-font);
-    font-size: 8vw !important;
-    color: var(--platinum);
-}
+

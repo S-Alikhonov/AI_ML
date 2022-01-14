@@ -3,10 +3,10 @@
 {% from 'components/cards.html' import minimal_card %}
 
     <div class="row">
-        <div class="col-xs-12 col-md-6">
-            <img src="{{url_for('static',filename='me_mac.png')}}" alt="">
+        <div class="col-xs-12 col-md-6 d-flex justify-content-center justify-content-md-end">
+            <img class='project-avatar' src="{{url_for('static',filename='me_mac.png')}}" alt="">
         </div>
-        <div class="col-xs-12 col-md-6 page-title d-flex align-items-center justify-content-s-center justify-content-md-start">
+        <div class="page-title col-xs-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start">
             <h1>My Portfolio</h1>
         </div>
     </div>
@@ -14,7 +14,7 @@
         <div class="projects">
             <div class="row">
                 {%for project in projects%}
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3 project-card">
                         {{minimal_card(project['type'],project['title'],project['text'],project['link'])}}
                     </div>
                 {% endfor %}

@@ -1,0 +1,16 @@
+.reach-me {
+    width: 50vw;
+}
+label {
+    color: #ffc80091;
+}
+.fa {
+    color: #ffc80083;
+    font-size: 40px;
+}
+.fa:hover {
+    color: #ffc800;
+    font-size: 50px;
+    line-height: 0.8;
+    
+}
