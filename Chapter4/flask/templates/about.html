@@ -1,4 +1,53 @@
 {% extends 'base.html' %}
 {%block content%}
-<h1>About page</h1>
+<div class="container saidalikhon m-5">
+    <h1><span class='my-name'>I'm Said</span>alikhon Alikhonov</h1>
+    <p>Data Scientist<span class='my-name'> / </span>AI engineer</p>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-4 mb-3">
+        <div class='interests-hobbies text-sm-center text-md-end mt-md-5 pt-md-5'>
+            <div class='hobbies mb-5'>
+                <h2>Hobbies</h2>
+                <li>Video editing</li>
+                <li>Photography</li>
+            </div>
+        
+            <div class='interest mb-5'>
+                <h2>Interests</h2>
+                <li>Technology</li>
+                <li>Space</li>
+                <li>Content creation</li>
+            </div>
+            <div class='education mb-5'>
+                <h2>Education</h2>
+                <li>BSc in Mechanical Engineering - 2014-2019</li>
+                <li>MSc in Engineering and Management - 2019 - present</li>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4 mb-3 d-flex justify-content-center">
+        <img class='avatar-2' src="{{url_for('static',filename='about.png')}}" alt="">
+    </div>
+    <div class="col-xs-12 col-md-4 mb-3">
+        <div class="technologies text-sm-center text-md-start mt-md-5 pt-md-5">
+            <h2>Technologies</h2>
+            <li>Python</li>
+            <li>Sckit-Learn</li>
+            <li>Pytorch</li>
+            <li>Pandas</li>
+            <li>Numpy</li>
+            <li>OpenCV</li>
+            <li>Matplotlib</li>
+            <li>Seaborn</li>
+            <li>Plotly</li>
+            <li>Streamlit</li>
+            <li>Spacy</li>
+            <li>Flask</li>
+            <li>Beautiful Soup</li>
+            <li>Selenium</li>
+    
+        </div>
+    </div>
+</div>
 {%endblock%}

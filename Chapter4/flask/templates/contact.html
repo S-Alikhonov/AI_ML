@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Contact Page</h1>
+    {% from 'components/contact.html' import contacts %}
+    {{contact()}}
 {% endblock %}

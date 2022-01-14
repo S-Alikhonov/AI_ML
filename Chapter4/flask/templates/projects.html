@@ -9,7 +9,8 @@
         <div class="row">
             {%for project in projects%}
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                    {{minimal_card()}}
+                    
+                    {{minimal_card(project['type'],project['title'],project['text'])}}
                 </div>
             {% endfor %}
         </div>

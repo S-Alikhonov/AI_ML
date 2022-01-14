@@ -27,7 +27,7 @@ def projects():
    
     my_projects = [
         {
-            "name":"books",
+            "type":"Data Visualisation",
             'cover_image': 'https://i.insider.com/605367b3fe6a340019acf502?width=700',
             'title': 'Best Books',
             'text': descriptions[0],
@@ -35,20 +35,22 @@ def projects():
 
         },
         {
-            "name":"fitness_app",
+            "type":"Machine Learning",
             'cover_image': 'https://www.mobindustry.net/wp-content/uploads/wearables-1.jpg',
             'title': 'AI powered Fitness App',
             'text': descriptions[1],
             'link': 'https://github.com/S-Alikhonov/AI_ML/tree/main/Chapter%202/challenge%20week%20-%20Fitness%20app'
 
         },
-        {
+        {   
+            'type': 'Deep Laerning',
             'cover_image':'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSrL0dDqsXjJR3E8lw7abs5pR0b2Ra6G7193NiXv2-UtoyDyOxGkCruGw8EU3idymiP7E&usqp=CAU',
             'title':'Digit Recognizer',
             'text':descriptions[2],
             'link':'https://github.com/S-Alikhonov/AI_ML/blob/main/Chapter%203/cotours%20:%20DNNs/handwriting.ipynb'
         },
-        {
+        {   
+            'type': 'NLP',
             'cover_image':'https://images.ctfassets.net/3viuren4us1n/5H2ZpQTLB7FrEJN869bjXJ/28ce98438c409a3a3502490179ee7dfe/Healthcare-Bots.jpg',
             'title':'Med-Chatbot',
             'text':  descriptions[3],
