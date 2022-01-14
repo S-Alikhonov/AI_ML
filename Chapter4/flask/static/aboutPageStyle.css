@@ -1,0 +1,32 @@
+.avatar-2 {
+    width: 30vw;
+    border-radius: 15vw;
+    box-shadow: var(--platinum) 2px 1px 4px, var(--platinum) 0px 0px 0px 3px;
+}
+.avatar-2:hover {
+    box-shadow:  #ffc600 2px 1px 4px, #ffc600 0px 0px 0px 3px;
+}
+
+.interests-hobbies,.technologies {
+    color: var(--platinum);
+    list-style: none;
+}
+.saidalikhon {
+    text-align: center;
+    color: var(--platinum);
+}
+
+.interests-hobbies h2,.technologies h2,.saidalikhon h1 {
+    font-family: var(--main-font);
+    color: var(--cultured);
+    font-size: 20px;
+}
+.saidalikhon h1 {
+    font-size: 7vw;
+}
+.my-name {
+    color: #ffc600
+}
+.interests-hobbies :hover,.technologies:hover {
+    color: #ffc600
+}

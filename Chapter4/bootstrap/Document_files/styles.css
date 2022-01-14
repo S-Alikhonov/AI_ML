@@ -1,0 +1,284 @@
+:root {
+    --primary-font: 'Dosis', sans-serif;
+    --secondary-font: 'Exo', sans-serif;
+    --helper-font: 'Kulim Park', sans-serif;
+    --auxilary-font: 'Oxanium', cursive;
+    --main-font: 'Montserrat', sans-serif;
+    --black: #000000ff;
+    --dim-black: #010101;
+    --dim-gray: #66666eff;
+    --manatee: #9999a1ff;
+    --platinum: #e6e6e9ff;
+    --cultured: #f4f4f6ff;
+}
+.navbar-togler {
+    background-image: solid 1px #ffc600 !important;
+}
+.navbar {
+    background-color: #010101;
+    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
+
+}
+.navbar a {
+    color:var(--manatee) !important;
+    font-family: var(--auxilary-font) !important;
+}
+.navbar a:hover {
+    color: #ffc600 !important;
+    font-family: var(--auxilary-font) !important;
+    font-size: 1.5rem;
+}
+body {
+    background-color: #010101
+}
+
+footer {
+    padding: 30px;
+    background: rgba(245, 245, 245, 0);
+    color: var(--secondary-color);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+
+
+/* projects:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+} */
+.foot {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.btn {
+    background: var(--platinum);
+    color: var(--dim-black);
+    font-size: 1vw;
+}
+.btn:hover {
+    background: #ffc600;
+    color: var(--dim-black);
+}
+.texts {
+    margin-top: 15vw;
+
+}
+.projects {
+    padding: 30px;
+    margin-top: 30px;
+}
+.card {
+    max-width: 250px;
+    background: rgba(245, 245, 245, 0);
+    border: 1px solid whitesmoke !important;
+    color:whitesmoke !important
+    
+}
+.card-body {
+    background: rgba(245, 245, 245, 0);
+}
+.card:hover {
+    background: #ffc600;;
+    border: 1px solid whitesmoke !important;
+    color:var(--dim-black) !important;
+  
+}
+
+.avatar-2 {
+    width: 30vw;
+    border-radius: 15vw;
+    box-shadow: var(--platinum) 2px 1px 4px, var(--platinum) 0px 0px 0px 3px;
+}
+.avatar-2:hover {
+    box-shadow:  #ffc600 2px 1px 4px, #ffc600 0px 0px 0px 3px;
+}
+
+.interests-hobbies,.technologies {
+    color: var(--platinum);
+    list-style: none;
+}
+.saidalikhon {
+    text-align: center;
+    color: var(--platinum);
+}
+
+.interests-hobbies h2,.technologies h2,.saidalikhon h1 {
+    font-family: var(--main-font);
+    color: var(--cultured);
+    font-size: 20px;
+}
+.saidalikhon h1 {
+    font-size: 7vw;
+}
+.my-name {
+    color: #ffc600
+}
+.interests-hobbies :hover,.technologies:hover {
+    color: #ffc600
+}
+.reach-me {
+    width: 50vw;
+}
+label {
+    color: #ffc600;
+}
+.page-title h1{
+    font-family: var(--main-font);
+    font-size: 8vw !important;
+    color: var(--platinum);
+}
+/*  
+    */
+/* home_draft stles */
+/*       */
+
+/* .card {
+    color: var(--primary-color) !important;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    border-radius: 10px;
+}
+.card .btn-primary {
+    background: var(--primary-color);
+    border: 1px solid whitesmoke;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+.card .btn-primary:hover {
+    background: var(--secondary-text-color);
+    border: 1px solid whitesmoke;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.card-body {
+    background: whitesmoke;
+    color: var(--primary-color);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px;
+    
+}
+
+.card-text {
+    min-height: 10rem;
+    max-height: 10rem;
+    overflow: auto;
+}
+.card-title {
+    min-height: 4rem;
+    max-height: 4rem;
+    overflow: auto;
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    min-height:15rem;
+    max-height: 15rem;
+    position: cover;
+    border:solid 1px rgba(0, 0, 0, 0.2)
+} */
+
+/* .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: whitesmoke;
+    font-family: var(--primary-font);
+    font-weight: 300;
+    background: var(--primary-color);
+    margin-top: 5rem;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border-radius: 10px;
+} */
+/* .avatar {
+    margin-top:30px;
+    margin-bottom: 30px;
+    background-image: url('avatar.png') !important;
+    height: 50em;
+    width: 25em;
+    background-size: cover;
+    border-radius:25em 0 0 25em ;
+
+    
+}
+.parent {
+    position: relative;
+}
+
+.home-intro {
+    margin-top: 150px;
+
+    position: absolute;
+    font-family: 'Bungee', cursive;
+    font-size: 3rem;
+    top:0;
+    color: var(--dim-gray);
+
+}
+
+#call-me {
+    font-family: var(--helper-font);
+    font-size: 2rem;
+}
+
+#distinct {
+    color: black;
+}
+
+#call-me #distinct:hover {
+    font-size: 3rem;
+    line-height: 0.8;
+}
+#love {
+    font-size: 2rem;
+    font-family: var(--primary-font);
+    line-height: 0.9;
+    border-bottom: solid 2px dimgray;
+}
+.home-intro .my-btn:hover {
+    background: dimgray; 
+}*/
+
+/* 3d effect */
+
+/* .greeting {
+    position: absolute;
+    z-index: 1;
+}
+.name {
+    margin-top:50px;
+    margin-left:30px;
+    top:0;
+    position: absolute;
+    z-index: 1;
+    font-size: 60px;
+    font-family: var(--main-font);
+    font-weight: 900;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 20px;
+    width: auto;
+    background-color:whitesmoke;
+}
+.hello{
+    top:0;
+    margin:30px;
+    width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 0;
+    line-height: 30px;
+    position: absolute;
+    font-size: 50px;
+    z-index: 2;
+    background:whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+} */
+
+
+
+

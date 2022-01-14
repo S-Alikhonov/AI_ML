@@ -1,0 +1,42 @@
+#home-page {
+    padding-left: 5vw;
+}
+#home-page p {
+   color: var(--manatee);
+
+   
+}
+.i-am {
+    font-family: var(--main-font);
+    font-weight: 900;
+    font-size: 3vw;
+}
+#call-me {
+    font-size: 2vw;
+}
+.avatar {
+    margin-top:30px;
+    margin-bottom: 30px;
+    background-image: url('avatar.png') !important;
+    height: 40vw;
+    width: 20vw;
+    background-size: cover;
+    border-radius:20vw 0 0 20vw ;
+}
+#distinct {
+    color: var(--platinum);
+}
+#call-me #distinct:hover {
+    font-size: 3vw;
+    line-height: 0.2;
+    color: #ffc600;
+}
+
+.shorts {
+    font-size:  1vw;
+    border : solid 1px (--manatee) !important;
+}
+.shorts p {
+    min-height: 5vw;
+    
+}
