@@ -20,7 +20,7 @@
 .avatar {
     margin-top:30px;
     margin-bottom: 30px;
-    background-image: url('avatar.png') !important;
+    background-image: url('../images/avatar.png') !important;
     height: 40vw;
     width: 20vw;
     background-size: cover;

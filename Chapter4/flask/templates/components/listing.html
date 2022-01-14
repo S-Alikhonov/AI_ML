@@ -1,0 +1,6 @@
+{%macro listing(header,elements)%}
+<h2>{{header}}</h2>
+{%for element in elements%}
+    <li>{{element}}</li>
+{%endfor%}
+{%endmacro%}

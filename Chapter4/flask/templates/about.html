@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {%block content%}
+{%from 'components/listing.html' import listing %}
 <div class="container saidalikhon mt-5">
     <h1><span class='my-name'>I'm Said</span>alikhon Alikhonov</h1>
     <p>Data Scientist<span class='my-name'> / </span>AI engineer</p>
@@ -8,44 +9,23 @@
     <div class="col-xs-12 col-md-4 mb-3">
         <div class='interests-hobbies text-center text-md-end mt-md-5 pt-md-5 ps-3'>
             <div class='hobbies mb-5'>
-                <h2>Hobbies</h2>
-                <li>Video editing</li>
-                <li>Photography</li>
+                {{listing(bio['hobbies']['title'],bio['hobbies']['elements'])}}
             </div>
         
             <div class='interest mb-5'>
-                <h2>Interests</h2>
-                <li>Technology</li>
-                <li>Space</li>
-                <li>Content creation</li>
+                {{listing(bio['interests']['title'],bio['interests']['elements'])}}
             </div>
             <div class='education mb-5'>
-                <h2>Education</h2>
-                <li>BSc in Mechanical Engineering - 2014-2019</li>
-                <li>MSc in Engineering and Management - 2019 - present</li>
+                {{listing(bio['education']['title'],bio['education']['elements'])}}
             </div>
         </div>
     </div>
     <div class="col-xs-12 col-md-4 mb-5 d-flex justify-content-center">
-        <img class='avatar-2' src="{{url_for('static',filename='about.png')}}" alt="">
+        <img class='avatar-2' src="{{url_for('static',filename='images/about.png')}}" alt="">
     </div>
     <div class="col-xs-12 col-md-4 mb-3">
         <div class="technologies text-center text-md-start mt-md-5 pt-md-5">
-            <h2>Technologies</h2>
-            <li>Python</li>
-            <li>Sckit-Learn</li>
-            <li>Pytorch</li>
-            <li>Pandas</li>
-            <li>Numpy</li>
-            <li>OpenCV</li>
-            <li>Matplotlib</li>
-            <li>Seaborn</li>
-            <li>Plotly</li>
-            <li>Streamlit</li>
-            <li>Spacy</li>
-            <li>Flask</li>
-            <li>Beautiful Soup</li>
-            <li>Selenium</li>
+            {{listing(bio['techno']['title'],bio['techno']['elements'])}}
     
         </div>
     </div>

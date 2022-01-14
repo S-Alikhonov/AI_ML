@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from data import my_projects
+from data import my_projects,bio
 
 app=Flask(__name__)
 
@@ -9,12 +9,10 @@ def index():
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('about.html',bio=bio)
 
 @app.route('/projects')
 def projects():
-
-    
     return render_template('projects.html',projects=my_projects)
 
 

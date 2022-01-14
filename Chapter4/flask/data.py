@@ -1,3 +1,5 @@
+
+
 descriptions = ['This project is in the form of web site for EDA, data visualisation and web scraping.\
                     As dataset top-1000 business books from Good Reads website are chosen and scraped. ',
                     'This fitness application created with Flask framework as web application. It can distinguish\
@@ -10,7 +12,7 @@ descriptions = ['This project is in the form of web site for EDA, data visualisa
                         It can greet, understand the what kind of symtoms and can offer to schedule an appointment if\
                         if needed.']
    
-    
+
 my_projects = [
         {
             "type":"Data Visualisation",
@@ -44,3 +46,41 @@ my_projects = [
             
         }
     ]
+
+bio = {
+
+    'hobbies':{
+        'title':'hobbies',
+        'elements': ['Video editing','Photography']
+    },
+    'interests':{
+        'title':'interests',
+        'elements':['Technology','Space','Content creation']
+    },
+    'education':{
+        'title':'Education',
+        'elements':['BSc in Mechanical Engineering - 2014-2019','MSc in Engineering and Management - 2019 - present']
+    },
+    'techno':{   
+        'title':'Technologies I Use',
+        'elements':[
+            'Python',
+           'Sckit-Learn',
+           'Pytorch',
+           'Pandas',
+           'Numpy',
+           'OpenCV',
+           'Matplotlib',
+           'Seaborn',
+           'Plotly',
+           'Streamlit',
+           'Spacy',
+           'Flask',
+           'Beautiful Soup',
+           'Selenium',
+        ]
+
+    }
+}
+
+           
