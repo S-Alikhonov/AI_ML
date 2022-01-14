@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% from 'components/contact.html' import contacts %}
-    {{contact()}}
+    {% from 'components/form.html' import reach %}
+    <img src="{{url_for('static',filename='me_fist.png')}}" alt="">
+    {{reach()}}
 {% endblock %}

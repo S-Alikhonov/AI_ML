@@ -153,12 +153,12 @@ projects:hover {
     min-height: 5vw;
     border-bottom: solid 1px var(--manatee);
 }
-.shorts .btn {
+.btn {
     background: var(--platinum);
     color: var(--dim-black);
     font-size: 1vw;
 }
-.shorts .btn:hover {
+.btn:hover {
     background: #ffc600;
     color: var(--dim-black);
 }
@@ -214,6 +214,17 @@ projects:hover {
 }
 .interests-hobbies :hover,.technologies:hover {
     color: #ffc600
+}
+.reach-me {
+    width: 50vw;
+}
+label {
+    color: #ffc600;
+}
+.page-title h1{
+    font-family: var(--main-font);
+    font-size: 8vw !important;
+    color: var(--platinum);
 }
 /*  
     */
