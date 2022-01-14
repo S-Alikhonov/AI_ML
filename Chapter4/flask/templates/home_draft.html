@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <div class="container-fluid parent">
+            <div class="row">
+                <div class="col d-flex justify-content-end">
+                    <div class="avatar align-self-center">
+                    </div>
+                </div>  
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="container home-intro">
+                        <p class='i-am'>👋 <span id='distinct'>Hi!</span>  <span id='distinct'>I'm Said</span>alikhon Alikhonov</p>
+                        <p id='call-me'>You can <span id='distinct'>call me Data Scientist</span> or <span id='distinct'>AI engineer</span> 😉</p>
+                        <div class='col-7' id='love'>
+                            <p>I love learning, exploring, preprocessing, creating, presenting and delivering and of course 🐼s and 🐍.</p>
+                        </div>
+                        <div class="col-7 d-flex align-items-start justify-content-start mt-3">
+                            <a href='{{url_for("about")}}'class="btn btn-dark my-btn me-2">Learn about me</a>
+                           <a href='{{url_for("projects")}}' class="btn btn-dark my-btn">Go to my projects</a>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+{% endblock %}

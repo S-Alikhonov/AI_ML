@@ -1,15 +1,11 @@
 :root {
-    --auxilary-color: #e63946ff;
-    --text-color: #f1faeeff;
-    --secondary-text-color: #a8dadcff;
-    --secondary-color: #457b9dff;
-    --primary-color: #1d3557ff;
     --primary-font: 'Dosis', sans-serif;
     --secondary-font: 'Exo', sans-serif;
     --helper-font: 'Kulim Park', sans-serif;
     --auxilary-font: 'Oxanium', cursive;
     --main-font: 'Montserrat', sans-serif;
     --black: #000000ff;
+    --dim-black: #010101;
     --dim-gray: #66666eff;
     --manatee: #9999a1ff;
     --platinum: #e6e6e9ff;
@@ -17,16 +13,16 @@
 }
 
 .navbar {
-    background: rgba(245, 245, 245, 0);
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background-color: #010101;
+    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
 
 }
 .navbar a {
-    color: var(--primary-color) !important;
+    color:var(--manatee) !important;
     font-family: var(--auxilary-font) !important;
 }
 body {
-    background-color: whitesmoke;
+    background-color: #010101
 }
 
 footer {
@@ -111,9 +107,66 @@ projects:hover {
     text-align: center;
 }
 
+#home-page {
+    padding-left: 5vw;
+}
+#home-page p {
+   color: var(--manatee);
 
-
+   
+}
+.i-am {
+    font-family: var(--main-font);
+    font-weight: 900;
+    font-size: 3vw;
+}
+#call-me {
+    font-size: 2vw;
+}
 .avatar {
+    margin-top:30px;
+    margin-bottom: 30px;
+    background-image: url('avatar.png') !important;
+    height: 40vw;
+    width: 20vw;
+    background-size: cover;
+    border-radius:20vw 0 0 20vw ;
+}
+#distinct {
+    color: var(--platinum);
+}
+#call-me #distinct:hover {
+    font-size: 3vw;
+    line-height: 0.2;
+    color: #ffc600;
+}
+
+.shorts {
+    font-size:  1vw;
+}
+.shorts p {
+    min-height: 5vw;
+    border-bottom: solid 1px var(--manatee);
+}
+.shorts .btn {
+    background: var(--platinum);
+    color: var(--dim-black);
+    font-size: 1vw;
+}
+.shorts .btn:hover {
+    background: #ffc600;
+    color: var(--dim-black);
+}
+.texts {
+    margin-top: 15vw;
+
+}
+/*      */
+/* home_draft stles */
+/*       */
+
+
+/* .avatar {
     margin-top:30px;
     margin-bottom: 30px;
     background-image: url('avatar.png') !important;
@@ -130,7 +183,7 @@ projects:hover {
 
 .home-intro {
     margin-top: 150px;
-    margin-left: 100px;
+
     position: absolute;
     font-family: 'Bungee', cursive;
     font-size: 3rem;
@@ -159,11 +212,12 @@ projects:hover {
     border-bottom: solid 2px dimgray;
 }
 .home-intro .my-btn:hover {
-    background: dimgray;
-}
+    background: dimgray; 
+}*/
+
 /* 3d effect */
 
-.greeting {
+/* .greeting {
     position: absolute;
     z-index: 1;
 }
@@ -196,7 +250,7 @@ projects:hover {
     background:whitesmoke;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
-}
+} */
 
 
 
