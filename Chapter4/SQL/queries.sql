@@ -69,7 +69,7 @@ FROM
 ORDER BY
 	first_name DESC
 LIMIT 
-5
+5;
 
 SELECT
 	first_name,
@@ -78,7 +78,7 @@ FROM
 	customer
 ORDER BY
 	first_name ASC
-LIMIT 5 OFFSET 10
+LIMIT 5 OFFSET 10;
 
 INSERT INTO customer(store_id,
 					 first_name,
