@@ -69,7 +69,7 @@ FROM
 ORDER BY
 	first_name DESC
 LIMIT 
-5
+5;
 
 SELECT
 	first_name,
@@ -78,7 +78,7 @@ FROM
 	customer
 ORDER BY
 	first_name ASC
-LIMIT 5 OFFSET 10
+LIMIT 5 OFFSET 10;
 
 INSERT INTO customer(store_id,
 					 first_name,
@@ -99,6 +99,8 @@ WHERE customer_id = 602 RETURNING *;
 
 DELETE FROM customer
 WHERE customer_id = 605
- or there is more logical way
+
+--  or there is more logical way
+ 
 DELETE FROM customer
 WHERE customer_id IN(SELECT customer_id FROM customer ORDER BY customer_id DESC LIMIT 1) RETURNING *;
