@@ -69,7 +69,13 @@ INNER JOIN film f USING(film_id)
 -- Question 5 :
 -- Select all the stores with addresses and manager staff name last name.
 
-
+SELECT
+	s.store_id store_store_id,
+	a.address || ', ' || a.district address_full_address,
+	staff.first_name || ' ' || staff.last_name staff_manager_name
+FROM store s
+INNER JOIN address a USING(address_id)
+INNER JOIN  staff ON (s.manager_staff_id = staff.staff_id);
 
 
 -- Question 6 :
