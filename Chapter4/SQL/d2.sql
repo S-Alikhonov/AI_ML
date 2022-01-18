@@ -83,17 +83,6 @@ INNER JOIN  staff ON (s.manager_staff_id = staff.staff_id);
 -- After the 5000th movie, they get a bonus of 0.1 euro for every movie they rent.
 -- Calculate total bonus that is received by staff members and join their names and last_names
 
--- by rentals they proceeded
-SELECT
-	s.staff_id,
-	s.first_name || ' ' || s.last_name staff_full_name,
-	CASE 
-		WHEN (COUNT(rental_id) -5000)>0  THEN (COUNT(rental_id) -5000)*0.1
-		ELSE 0
-		END AS staff_bonus
-FROM staff s
-INNER JOIN rental r USING(staff_id)
-GROUP BY s.staff_id,staff_full_name
 
 -- by payment transaction they received from customer
 SELECT
@@ -107,10 +96,3 @@ FROM staff s
 INNER JOIN payment USING(staff_id)
 GROUP BY s.staff_id,staff_full_name
 
-
-SELECT rental_id,
-COUNT(payment_id)
-FROM rental
-INNER JOIN payment USING(rental_id)
-GROUP BY rental_id
-HAVING COUNT(payment_id)>1
