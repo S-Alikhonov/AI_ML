@@ -1,3 +1,4 @@
+
 from flask import Flask
 from flask_restful import Api
 from utils.models.tasks import db
@@ -14,5 +15,6 @@ def create_app():
     
     api.add_resource(HomeRoute,'/')
     api.add_resource(TaskById,'/<string:task_id>')
+    
     return app
     
