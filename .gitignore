@@ -3,4 +3,4 @@
 .DS_Store
 .venv
 *.pyc
-Chapter4/REST API/venv/bin/activate
+Chapter4/REST API/venv
