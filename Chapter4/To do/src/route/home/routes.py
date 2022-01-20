@@ -4,7 +4,9 @@ from flask_restful import Resource
 from utils.models.tasks import db,Tasks
 from flask import request
 import json
-from datetime import date, datetime
+from datetime import datetime
+
+
 class HomeRoute(Resource):
     def get(self):
         tasks = db.session.query(Tasks).all()
@@ -37,9 +39,12 @@ class TaskById(Resource):
         task = db.session.query(Tasks).filter(Tasks.task_id==task_id).first()
         if task:
             for key in request.form.keys():
-                setattr(task,key,json.loads(request.form[key]))
-                setattr(task,'changed_at',datetime.now())
-            print(task.completed)
+                if key == 'completed':
+                    setattr(task,key,json.loads(request.form[key]))
+                else: setattr(task,key,request.form[key])
+                
+
+            setattr(task,'changed_at',datetime.now())
             db.session.commit()
             return {"task edited":task.to_json()}
         

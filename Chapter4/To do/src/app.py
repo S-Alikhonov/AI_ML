@@ -1,8 +1,10 @@
 
-from flask import Flask
+from urllib import request
+from flask import Flask,render_template
 from flask_restful import Api
 from utils.models.tasks import db
 from route.home.routes import HomeRoute,TaskById
+import json
 
 
 def create_app():
@@ -16,5 +18,5 @@ def create_app():
     api.add_resource(HomeRoute,'/')
     api.add_resource(TaskById,'/<string:task_id>')
     
-    return app
     
+    return app
