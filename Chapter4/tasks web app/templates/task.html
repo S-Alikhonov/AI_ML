@@ -1,0 +1,8 @@
+{%extends 'base.html'%}
+
+{%block content %}
+    {%from 'components/components.html' import card%}
+    <div class="d-flex flex-column align-items-center">
+        {{card(task['title'],task['description'],task['task_id'])}}
+    </div>
+{% endblock %}

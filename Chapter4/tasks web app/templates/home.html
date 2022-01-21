@@ -1,6 +1,11 @@
 {%extends 'base.html' %}
 {%block content%}
 <div class="container">
-   jenfini
+   {%from 'components/components.html' import card%}
+   <div class="row">
+      {%for task in tasks%}
+         {{card(task['title'],task['description'],id=task['task_id'])}}
+      {% endfor%}
+   </div>
 </div>
 {%endblock%}
