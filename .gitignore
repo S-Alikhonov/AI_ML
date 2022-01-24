@@ -1,7 +1,8 @@
 
 .DS_Store
-.DS_Store
+
 .venv
 *.pyc
 Chapter4/REST API/venv
 Chapter4/To do/venv
+Chapter4/docker/venv
