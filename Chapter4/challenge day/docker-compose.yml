@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  api:
+    build: ./api
+    ports:
+      - 8000:8000
+    environment:
+      - PYTHONPATH=/api
+    volumes:
+      - web_data:/web
+  
+  web:
+    build: ./web
+    ports:
+      - 5000:5000
+    depends_on:
+      - api
+    volumes:
+      - web_data:/web
+
+
+volumes:
+  web_data:

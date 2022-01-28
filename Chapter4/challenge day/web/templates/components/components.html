@@ -1,0 +1,21 @@
+{%macro card(title,description,id)%}
+    <a href="{{url_for('task',id=id)}}">
+        <div class="col-6 col-lg-4">
+            <div class="card m-5">
+                <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{description}}</p>
+                <div class="row">
+                    <div class="col-6">
+                        <a  href="{{url_for('update',id=id)}}" class="btn btn-primary m-2">update</a>
+                    </div>
+                    <div class="col-6">
+                        <a href="{{url_for('delete',id=id)}}" class="btn btn-primary m-2">delete</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </a>
+   
+{%endmacro%}
