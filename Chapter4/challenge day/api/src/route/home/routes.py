@@ -1,6 +1,6 @@
 from flask_restful import Resource
 from flask import request
-from logic import runer
+from route.home.logic import runer
 
 
 
@@ -9,6 +9,6 @@ class GetFile(Resource):
         
         res = request.form['file']
         print(res,flush=True)
-        runer(res,'model.pth')
+        runer(res,'/api/src/route/home/model.pth')
         return {'filename':res}
     
