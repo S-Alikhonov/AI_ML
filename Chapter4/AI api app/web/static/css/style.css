@@ -1,0 +1,21 @@
+img {
+    width: 400px !important;
+    border: solid 2px black;
+}
+
+.myform {
+    font-size: 20px;
+    width: 50vw;
+    margin-top: 50px;
+}
+
+.original image {
+    min-width: 40vw;
+    max-width: 40vw;
+}
+
+.result-image {
+    max-width:80px;
+    border: 2px solid goldenrod;
+    border-radius: 20%;
+}
